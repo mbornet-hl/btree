@@ -1,0 +1,4 @@
+# Indentation for C source files
+[*.c,*.h,*.l,*.y]
+indent_style = tab
+indent_size = 5
