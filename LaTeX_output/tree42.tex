@@ -1,0 +1,119 @@
+% 42 elements in the tree
+% [    1] : left =         right =         up = [    2] where = LEFT  H_left =  1 H_right =  1
+% [    2] : left = [    1] right = [    3] up = [    4] where = LEFT  H_left =  2 H_right =  2
+% [    3] : left =         right =         up = [    2] where = RIGHT H_left =  1 H_right =  1
+% [    4] : left = [    2] right = [    6] up = [    8] where = LEFT  H_left =  3 H_right =  3
+% [    5] : left =         right =         up = [    6] where = LEFT  H_left =  1 H_right =  1
+% [    6] : left = [    5] right = [    7] up = [    4] where = RIGHT H_left =  2 H_right =  2
+% [    7] : left =         right =         up = [    6] where = RIGHT H_left =  1 H_right =  1
+% [    8] : left = [    4] right = [   12] up = [   16] where = LEFT  H_left =  4 H_right =  4
+% [    9] : left =         right =         up = [   10] where = LEFT  H_left =  1 H_right =  1
+% [   10] : left = [    9] right = [   11] up = [   12] where = LEFT  H_left =  2 H_right =  2
+% [   11] : left =         right =         up = [   10] where = RIGHT H_left =  1 H_right =  1
+% [   12] : left = [   10] right = [   14] up = [    8] where = RIGHT H_left =  3 H_right =  3
+% [   13] : left =         right =         up = [   14] where = LEFT  H_left =  1 H_right =  1
+% [   14] : left = [   13] right = [   15] up = [   12] where = RIGHT H_left =  2 H_right =  2
+% [   15] : left =         right =         up = [   14] where = RIGHT H_left =  1 H_right =  1
+% [   16] : left = [    8] right = [   32] up =         where =  ???  H_left =  5 H_right =  6
+% [   17] : left =         right =         up = [   18] where = LEFT  H_left =  1 H_right =  1
+% [   18] : left = [   17] right = [   19] up = [   20] where = LEFT  H_left =  2 H_right =  2
+% [   19] : left =         right =         up = [   18] where = RIGHT H_left =  1 H_right =  1
+% [   20] : left = [   18] right = [   22] up = [   24] where = LEFT  H_left =  3 H_right =  3
+% [   21] : left =         right =         up = [   22] where = LEFT  H_left =  1 H_right =  1
+% [   22] : left = [   21] right = [   23] up = [   20] where = RIGHT H_left =  2 H_right =  2
+% [   23] : left =         right =         up = [   22] where = RIGHT H_left =  1 H_right =  1
+% [   24] : left = [   20] right = [   28] up = [   32] where = LEFT  H_left =  4 H_right =  4
+% [   25] : left =         right =         up = [   26] where = LEFT  H_left =  1 H_right =  1
+% [   26] : left = [   25] right = [   27] up = [   28] where = LEFT  H_left =  2 H_right =  2
+% [   27] : left =         right =         up = [   26] where = RIGHT H_left =  1 H_right =  1
+% [   28] : left = [   26] right = [   30] up = [   24] where = RIGHT H_left =  3 H_right =  3
+% [   29] : left =         right =         up = [   30] where = LEFT  H_left =  1 H_right =  1
+% [   30] : left = [   29] right = [   31] up = [   28] where = RIGHT H_left =  2 H_right =  2
+% [   31] : left =         right =         up = [   30] where = RIGHT H_left =  1 H_right =  1
+% [   32] : left = [   24] right = [   36] up = [   16] where = RIGHT H_left =  5 H_right =  5
+% [   33] : left =         right =         up = [   34] where = LEFT  H_left =  1 H_right =  1
+% [   34] : left = [   33] right = [   35] up = [   36] where = LEFT  H_left =  2 H_right =  2
+% [   35] : left =         right =         up = [   34] where = RIGHT H_left =  1 H_right =  1
+% [   36] : left = [   34] right = [   40] up = [   32] where = RIGHT H_left =  3 H_right =  4
+% [   37] : left =         right =         up = [   38] where = LEFT  H_left =  1 H_right =  1
+% [   38] : left = [   37] right = [   39] up = [   40] where = LEFT  H_left =  2 H_right =  2
+% [   39] : left =         right =         up = [   38] where = RIGHT H_left =  1 H_right =  1
+% [   40] : left = [   38] right = [   41] up = [   36] where = RIGHT H_left =  3 H_right =  3
+% [   41] : left =         right = [   42] up = [   40] where = RIGHT H_left =  1 H_right =  2
+% [   42] : left =         right =         up = [   41] where = RIGHT H_left =  1 H_right =  1
+\documentclass{article}
+\usepackage{tikz-qtree}
+\begin{document}
+\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+	    blank/.style={draw=none},
+	    edge from parent/.style=
+	    {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+	    level distance=1.5cm}
+\begin{tikzpicture}
+\Tree
+     [.16
+          [.8
+               [.4
+                    [.2
+                         {1}
+                         {3}
+                    ]
+                    [.6
+                         {5}
+                         {7}
+                    ]
+               ]
+               [.12
+                    [.10
+                         {9}
+                         {11}
+                    ]
+                    [.14
+                         {13}
+                         {15}
+                    ]
+               ]
+          ]
+          [.32
+               [.24
+                    [.20
+                         [.18
+                              {17}
+                              {19}
+                         ]
+                         [.22
+                              {21}
+                              {23}
+                         ]
+                    ]
+                    [.28
+                         [.26
+                              {25}
+                              {27}
+                         ]
+                         [.30
+                              {29}
+                              {31}
+                         ]
+                    ]
+               ]
+               [.36
+                    [.34
+                         {33}
+                         {35}
+                    ]
+                    [.40
+                         [.38
+                              {37}
+                              {39}
+                         ]
+                         [.41
+                              \edge[blank]; \node[blank]{};
+                              {42}
+                         ]
+                    ]
+               ]
+          ]
+     ]
+\end{tikzpicture}
+\end{document}
