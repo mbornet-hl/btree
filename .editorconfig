@@ -1,3 +1,6 @@
+# Top-most EditorConfig file
+root = true
+
 # Indentation for C source files
 [*.c,*.h,*.l,*.y]
 indent_style = tab
