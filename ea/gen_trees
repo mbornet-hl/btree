@@ -1,0 +1,16 @@
+#!/bin/bash
+
+LATEX='/usr/bin/latex'
+DVIPS='/usr/bin/dvips'
+PS2PDF='/usr/bin/ps2pdf'
+
+for i in {002..070}
+do
+	prefix="tree_$i"
+	echo "$prefix"
+
+	./ea_latex_tree "$i" > "$prefix.tex"
+	$LATEX "$prefix.tex" > /dev/null
+	$DVIPS -t landscape "$prefix.dvi" 2> /dev/null
+	$PS2PDF "$prefix.ps" > /dev/null
+done

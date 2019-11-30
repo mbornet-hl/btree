@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{tikz-qtree}
+\begin{document}
+\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+	    blank/.style={draw=none},
+	    edge from parent/.style=
+	    {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+	    level distance=1.5cm}
+\begin{tikzpicture}
+\Tree
+[.21
+[.13
+[.5
+[.3
+[.2
+{1}
+				\edge[blank]; \node[blank]{};
+]
+{4}
+]
+[.9
+[.7
+{6}
+{8}
+]
+[.11
+{10}
+{12}
+]
+]
+]
+[.17
+[.15
+{14}
+{16}
+]
+[.19
+{18}
+{20}
+]
+]
+]
+[.29
+[.25
+[.23
+{22}
+{24}
+]
+[.27
+{26}
+{28}
+]
+]
+[.33
+[.31
+{30}
+{32}
+]
+[.35
+{34}
+{36}
+]
+]
+]
+]
+\end{tikzpicture}
+\end{document}

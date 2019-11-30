@@ -1,0 +1,11 @@
+#
+#	@(#)	[MB] ea_makefile	Version 1.3 du 19/11/30 - 
+#
+
+CC			= gcc
+CFLAGS		= -Wall -Werror -Wuninitialized -rdynamic
+
+ALL			: ea_latex_tree
+
+ea_latex_tree	: ea_latex_tree.c ../ci/lib ../cg/lib
+			$(CC) $(CFLAGS) -o $@ $< ../ci/lib ../cg/lib
