@@ -1,7 +1,7 @@
 # btree
 Binary trees management
 
-This repository contains C source code implementing balanced binary tree management.
+This repository contains C source code implementing balanced binary tree management (AVL tree).
 
 Searching for an element is in O(Log(n)).
 
