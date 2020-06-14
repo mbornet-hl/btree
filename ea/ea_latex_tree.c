@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- *	%Z%	[%Y%] %M%	Version %I% du %E% - %Q%
+ *	@(#)	[MB] ea_latex_tree.c	Version 1.8 du 20/06/14 - 
  */
 
 
